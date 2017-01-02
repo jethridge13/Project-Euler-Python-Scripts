@@ -13,6 +13,15 @@ def getDivisors(n):
                 divisors.append(int(n/i))
     return divisors
 
+# This function will return an array of the individual digits of a given number n
+def getIndividualDigits(n):
+    digits = []
+    while n > 0:
+        digits.append(n % 10)
+        n /= 10
+        n = int(math.floor(n))
+    return digits[::-1]
+
 # This function will print the elapsed time given the start time
 def printTimeElapsed(start):
     end = time.time()
