@@ -2,17 +2,7 @@
 
 import math
 import time
-
-def getDivisors(n):
-    divisors = []
-    limit = math.ceil(math.sqrt(n))
-    for i in range(1, limit):
-        if n % i == 0:
-            divisors.append(i)
-            if i != n/i:
-                divisors.append(int(n/i))
-    # print(divisors)
-    return divisors
+import functions
 
 def getTriangleNumber(n):
     a = 0
@@ -30,7 +20,7 @@ def iterateThroughTriangleNumbers(start, divisors, verbose):
     while not found:
         t = getTriangleNumber(n)
         n += 1
-        d = getDivisors(t)
+        d = functions.getDivisors(t)
         if verbose:
             print(str(t) + ": " + str(len(d)))
         if len(d) > divisors:
