@@ -22,6 +22,17 @@ def getIndividualDigits(n):
         n = int(math.floor(n))
     return digits[::-1]
 
+# Tests if a given number, n, is prime
+def isPrime(n):
+    if n == 1:
+        return False
+    elif n == 2 or n == 3:
+        return True
+    for i in range(1, math.ceil(math.sqrt(n)) + 1):
+        if n % i == 0 and i != 1:
+            return False
+    return True
+
 # This functions transforms a given number into a Roman numeral
 # It can accurately represent 1-3999 or any number if special characters (the characters with accents) are ignored.
 def numberToRomanNumeral(n):
@@ -150,3 +161,7 @@ def numberFromRomanNumeral(n):
 def printTimeElapsed(start):
     end = time.time()
     print("Time elapsed: " + str(end - start) + " seconds.")
+
+# Rotates a given list l by n places
+def rotate(l, n):
+    return l[n:] + l[:n]
