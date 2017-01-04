@@ -1,5 +1,6 @@
 import time
 import math
+import itertools
 
 # This function returns an array of all the divisors of a given number n
 # It is not guaranteed to be sorted
@@ -21,6 +22,10 @@ def getIndividualDigits(n):
         n /= 10
         n = int(math.floor(n))
     return digits[::-1]
+
+# Takes a given number n and searches a given list l for all permutations of that list
+def isPermutation(l, n):
+    return itertools.permutations(n)
 
 # Tests if a given number, n, is prime
 def isPrime(n):
@@ -156,6 +161,21 @@ def numberFromRomanNumeral(n):
     return number
 
 
+# This will return the longest array of consecutive prime sums of a prime
+def primeSum(n):
+    primes = []
+    for i in range(1, n+1):
+        if isPrime(i):
+            primes.append(i)
+    number = n
+    chain = []
+    for i in primes:
+        if number - i >= 0 and i != n:
+            chain.append(i)
+            number -= i
+        if number == 0:
+            break
+    return chain
 
 # This function will print the elapsed time given the start time
 def printTimeElapsed(start):
