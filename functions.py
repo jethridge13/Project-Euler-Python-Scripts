@@ -3,6 +3,7 @@ import math
 import itertools
 
 # This function returns an array of all the divisors of a given number n
+# This array includes the given number and 1 as divisors
 # It is not guaranteed to be sorted
 def getDivisors(n):
     divisors = []
