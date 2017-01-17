@@ -2,6 +2,22 @@ import time
 import math
 import itertools
 
+
+# Returns a triangle number as per given in the formula from problem 45
+def genTriangle(n):
+    return int(n*(n+1)/2)
+
+
+# Returns a pentagonal number as per given in the formula from problem 45
+def genPentagonal(n):
+    return int(n*(3*n-1)/2)
+
+
+# Returns a hexagonal number as per given in the formula from problem 45
+def genHexagonal(n):
+    return int(n*(2*n-1))
+
+
 # This function returns an array of all the divisors of a given number n
 # This array includes the given number and 1 as divisors
 # It is not guaranteed to be sorted
