@@ -3,6 +3,30 @@ import math
 import itertools
 
 
+# This is the classic implementation of the Fibonacci sequence
+def genFibonacciOriginal(n):
+    if n < 0:
+        return -1
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    else:
+        return genFibonacciOriginal(n-1) + genFibonacciOriginal(n-2)
+
+# This is a dynamic programming approach to Fibonacci. It does not store the result to a file.
+def genFibonacci(n):
+    if n < 0:
+        return -1
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    s = [1,1]
+    while len(s) < n:
+        s.append(s[len(s)-1] + s[len(s)-2])
+    return s[n-1]
+
 # Returns a triangle number as per given in the formula from problem 45
 def genTriangle(n):
     return int(n*(n+1)/2)
