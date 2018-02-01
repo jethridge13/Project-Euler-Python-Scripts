@@ -1,4 +1,4 @@
-# Find the greatest path from the top to the bottom of the triangle in '18.txt' going only to lower adjacent nodes.
+# Find the greatest path from the top to the bottom of the triangle in '67.txt' going only to lower adjacent nodes.
 import time
 import functions
 import unittest
@@ -27,8 +27,5 @@ class Test(unittest.TestCase):
 		self.assertEqual(calc(load('18Test.txt')), 23)
 
 if __name__ == '__main__':
-	start = time.time()
-	#unittest.main()
-	# 1074
-	print(calc(load('18.txt')))
-	functions.printTimeElapse(start)
+	# 7273
+	print(calc(load('67.txt')))

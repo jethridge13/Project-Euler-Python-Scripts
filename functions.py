@@ -44,7 +44,6 @@ def genHexagonal(n):
 
 # This function returns an array of all the divisors of a given number n
 # This array includes the given number and 1 as divisors
-# It is not guaranteed to be sorted
 def getDivisors(n):
     divisors = []
     limit = math.ceil(math.sqrt(n))
@@ -53,6 +52,7 @@ def getDivisors(n):
             divisors.append(i)
             if i != n/i:
                 divisors.append(int(n/i))
+    divisors.sort()
     return divisors
 
 # This function will return an array of the individual digits of a given number n
